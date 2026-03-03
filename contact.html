@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | Southwood Civic Group</title>
+  <meta name="description" content="Contact Southwood Civic Group." />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container">
+      <div class="topbarInner">
+        <div class="brand">
+          <div class="brandMark" aria-hidden="true">
+            <img src="assets/logo.png" alt="">
+          </div>
+          <div class="brandText">
+            <div class="brandName">Southwood Civic Group</div>
+            <div class="brandTag">Contact</div>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="events.html">Events</a>
+          <a data-nav href="news.html">News</a>
+          <a data-nav href="photo-gallery.html">Photo Gallery</a>
+          <a data-nav href="deed-restrictions.html">Deed Restrictions</a>
+          <a data-nav href="contact.html">Contact</a>
+        </nav>
+
+        <button id="menuBtn" class="menuBtn" type="button" aria-controls="drawer" aria-expanded="false">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <div id="drawerBackdrop" class="drawerBackdrop" aria-hidden="true"></div>
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <div class="drawerHeader">
+      <div class="drawerTitle">Southwood</div>
+      <button id="closeBtn" class="closeBtn" type="button">Close</button>
+    </div>
+    <nav class="drawerNav" aria-label="Mobile navigation">
+      <a data-nav href="index.html">Home <small>Overview</small></a>
+      <a data-nav href="events.html">Events <small>Calendar</small></a>
+      <a data-nav href="news.html">News <small>Updates</small></a>
+      <a data-nav href="photo-gallery.html">Photo Gallery <small>Community photos</small></a>
+      <a data-nav href="deed-restrictions.html">Deed Restrictions <small>Guidelines</small></a>
+      <a data-nav href="contact.html">Contact <small>Reach the board</small></a>
+    </nav>
+  </aside>
+
+  <main id="main" class="main">
+    <div class="container">
+      <div class="grid">
+        <section class="card">
+          <div class="cardHeader">
+            <h2>Send a Message</h2>
+            <div class="sub">Simple, clean, and functional on GitHub Pages</div>
+          </div>
+
+          <div class="cardBody">
+            <div class="notice" style="margin-bottom:12px;">
+              GitHub Pages can’t run server-side email by itself. Easiest option:
+              use Formspree (or similar). Replace the form action URL below.
+            </div>
+
+            <!-- Replace action with your Formspree endpoint:
+                 https://formspree.io/f/xxxxxxx -->
+            <form action="https://formspree.io/f/REPLACE_ME" method="POST">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input class="input" id="name" name="name" type="text" required />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input class="input" id="email" name="email" type="email" required />
+              </div>
+
+              <div class="field">
+                <label for="topic">Topic</label>
+                <input class="input" id="topic" name="topic" type="text" placeholder="Membership, event, question, concern…" />
+              </div>
+
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+
+              <div class="pillRow">
+                <button class="btn primary" type="submit">Send message</button>
+                <a class="btn" href="events.html">View events</a>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <aside class="card">
+          <div class="cardHeader">
+            <h2>Contact Info</h2>
+            <div class="sub">Put your real info here</div>
+          </div>
+          <div class="cardBody">
+            <ul class="list">
+              <li><b>Email:</b> <a href="mailto:info@southwood.org">info@southwood.org</a></li>
+              <li><b>Mailing:</b> (Add PO Box or address)</li>
+              <li><b>Meetings:</b> See the <a href="events.html">Events</a> page</li>
+            </ul>
+
+            <hr class="sep" />
+
+            <div class="notice">
+              If you want “contact form without third-party,” you’ll need a backend (Netlify Forms is a common choice and still easy).
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footerRow">
+        <div>© <span id="year"></span> Southwood Civic Group.</div>
+        <div><a href="index.html">Home</a> • <a href="deed-restrictions.html">Deed Restrictions</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>

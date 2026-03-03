@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Events | Southwood Civic Group</title>
+  <meta name="description" content="Upcoming events and meetings for Southwood Civic Group." />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container">
+      <div class="topbarInner">
+        <div class="brand">
+          <div class="brandMark" aria-hidden="true">
+            <img src="assets/logo.png" alt="">
+          </div>
+          <div class="brandText">
+            <div class="brandName">Southwood Civic Group</div>
+            <div class="brandTag">Events & calendar</div>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="events.html">Events</a>
+          <a data-nav href="news.html">News</a>
+          <a data-nav href="photo-gallery.html">Photo Gallery</a>
+          <a data-nav href="deed-restrictions.html">Deed Restrictions</a>
+          <a data-nav href="contact.html">Contact</a>
+        </nav>
+
+        <button id="menuBtn" class="menuBtn" type="button" aria-controls="drawer" aria-expanded="false">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <div id="drawerBackdrop" class="drawerBackdrop" aria-hidden="true"></div>
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <div class="drawerHeader">
+      <div class="drawerTitle">Southwood</div>
+      <button id="closeBtn" class="closeBtn" type="button">Close</button>
+    </div>
+    <nav class="drawerNav" aria-label="Mobile navigation">
+      <a data-nav href="index.html">Home <small>Overview</small></a>
+      <a data-nav href="events.html">Events <small>Calendar</small></a>
+      <a data-nav href="news.html">News <small>Updates</small></a>
+      <a data-nav href="photo-gallery.html">Photo Gallery <small>Community photos</small></a>
+      <a data-nav href="deed-restrictions.html">Deed Restrictions <small>Guidelines</small></a>
+      <a data-nav href="contact.html">Contact <small>Reach the board</small></a>
+    </nav>
+  </aside>
+
+  <main id="main" class="main">
+    <div class="container">
+      <section class="card">
+        <div class="cardHeader">
+          <h2>Upcoming Events</h2>
+          <div class="sub">Replace these with your real events</div>
+        </div>
+        <div class="cardBody">
+          <table class="table" aria-label="Events table">
+            <thead>
+              <tr>
+                <th style="width:160px;">Date</th>
+                <th>Event</th>
+                <th style="width:220px;">Time</th>
+                <th style="width:280px;">Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Feb 19, 2026</b></td>
+                <td>Greater Super Neighborhood Meeting</td>
+                <td>6:00–8:00 PM</td>
+                <td>Multi-Purpose Center</td>
+              </tr>
+              <tr>
+                <td><b>Feb 22, 2026</b></td>
+                <td>Block Walking / Membership Drive</td>
+                <td>4:00–6:00 PM</td>
+                <td>Neighborhood streets</td>
+              </tr>
+              <tr>
+                <td><b>Feb 24, 2026</b></td>
+                <td>Southwood Civic Group Meeting</td>
+                <td>7:00 PM</td>
+                <td>Community location (update)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <hr class="sep" />
+
+          <div class="notice">
+            Want a real calendar view? We can embed a Google Calendar (public) or use a simple “.ics download” link.
+            GitHub Pages can host either.
+          </div>
+
+          <div class="pillRow">
+            <a class="btn primary" href="contact.html">Submit an event idea</a>
+            <a class="btn" href="news.html">Check updates</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footerRow">
+        <div>© <span id="year"></span> Southwood Civic Group.</div>
+        <div><a href="index.html">Home</a> • <a href="contact.html">Contact</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
