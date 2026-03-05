@@ -46,6 +46,17 @@
     }
   });
 
+  // Sort any table/list rows with data-sort-desc by their corresponding data-* value
+  $$('[data-sort-desc]').forEach(container=>{
+    const key = container.getAttribute('data-sort-desc');
+    if(!key) return;
+
+    const rows = Array.from(container.children);
+    rows
+      .sort((a, b)=> Number(b.dataset[key] || 0) - Number(a.dataset[key] || 0))
+      .forEach(row => container.appendChild(row));
+  });
+
   // Lightbox for gallery page
   const lightbox = $("#lightbox");
   if(lightbox){
