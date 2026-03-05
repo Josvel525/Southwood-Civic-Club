@@ -177,15 +177,18 @@
       <section class="card" aria-label="Neighborhood Boundary Map" style="margin-top:18px;">
         <div class="cardHeader">
           <h2>Neighborhood Boundary</h2>
-          <div class="sub">Interactive map showing the area boundary (outline) and the reference address.</div>
+          <div class="sub">Reference map image showing the HOA boundary lines.</div>
         </div>
 
         <div class="cardBody">
-          <div id="map" style="height:420px; border:1px solid var(--line); border-radius:14px; overflow:hidden;"></div>
+          <img
+            src="assets/map.png"
+            alt="Southwood HOA boundary lines map"
+            style="width:100%; max-height:420px; object-fit:contain; border:1px solid var(--line); border-radius:14px; background:#fff;"
+          />
 
           <div class="notice" style="margin-top:12px;">
-            <b>Note:</b> The outline is a polygon. Paste your client’s boundary coordinates into
-            <code>BOUNDARY_COORDS</code> in the script below.
+            <b>Note:</b> This static map image is provided as the HOA boundary reference.
           </div>
         </div>
       </section>
@@ -206,78 +209,5 @@
   </footer>
 
   <script src="assets/site.js"></script>
-
-  <script>
-    // Reference point (center/marker)
-    const REFERENCE_ADDRESS = "3314 Rosedale St, Houston, TX";
-
-    // Paste boundary coordinates here (lat/lng pairs).
-    // Example:
-    // const BOUNDARY_COORDS = [
-    //   { lat: 29.745123, lng: -95.390456 },
-    //   { lat: 29.744810, lng: -95.388900 },
-    //   { lat: 29.744120, lng: -95.389410 },
-    // ];
-    const BOUNDARY_COORDS = [
-      // TODO: paste HOA boundary coords here
-    ];
-
-    let map;
-
-    function initMap() {
-      const centerFallback = { lat: 29.744, lng: -95.386 }; // Houston-ish fallback
-
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: centerFallback,
-        zoom: 15,
-        mapTypeControl: true,
-        streetViewControl: false,
-        fullscreenControl: true,
-      });
-
-      // Geocode the reference address -> center + marker
-      const geocoder = new google.maps.Geocoder();
-      geocoder.geocode({ address: REFERENCE_ADDRESS }, (results, status) => {
-        if (status === "OK" && results && results[0]) {
-          const loc = results[0].geometry.location;
-          map.setCenter(loc);
-
-          new google.maps.Marker({
-            map,
-            position: loc,
-            title: REFERENCE_ADDRESS,
-          });
-        } else {
-          console.warn("Geocode failed:", status);
-        }
-      });
-
-      // Draw boundary polygon if coords are provided
-      if (Array.isArray(BOUNDARY_COORDS) && BOUNDARY_COORDS.length >= 3) {
-        const polygon = new google.maps.Polygon({
-          paths: BOUNDARY_COORDS,
-          strokeOpacity: 0.9,
-          strokeWeight: 3,
-          fillOpacity: 0.12,
-          clickable: false,
-        });
-        polygon.setMap(map);
-
-        // Fit map to polygon bounds
-        const bounds = new google.maps.LatLngBounds();
-        BOUNDARY_COORDS.forEach(p => bounds.extend(p));
-        map.fitBounds(bounds);
-      } else {
-        console.warn("No boundary coords found. Add at least 3 points to BOUNDARY_COORDS.");
-      }
-    }
-  </script>
-
-  <!-- IMPORTANT: replace YOUR_API_KEY with your Google Maps JavaScript API key -->
-  <script
-    async
-    defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-  </script>
 </body>
 </html>
