@@ -283,6 +283,10 @@ body.drawerOpen .drawer{
   height:100%;
   object-fit:cover;
   min-height:240px;
+  transition: opacity .22s ease-in-out;
+}
+.heroImage img.isFading{
+  opacity:.25;
 }
 .heroOverlay{
   position:absolute;

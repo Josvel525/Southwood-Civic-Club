@@ -105,6 +105,31 @@
     });
   }
 
+
+  // Homepage hero image rotator
+  const heroRotatorImage = $("#heroRotatorImage");
+  if(heroRotatorImage){
+    const heroPhotos = [
+      { src: "assets/hoa1.png", alt: "Southwood Home of the Month - Photo 1" },
+      { src: "assets/hoa2.png", alt: "Southwood Home of the Month - Photo 2" },
+      { src: "assets/hoa3.png", alt: "Southwood Home of the Month - Photo 3" },
+      { src: "assets/hoa4.png", alt: "Southwood Home of the Month - Photo 4" }
+    ];
+
+    let heroIndex = 0;
+    setInterval(()=>{
+      heroIndex = (heroIndex + 1) % heroPhotos.length;
+      heroRotatorImage.classList.add("isFading");
+
+      setTimeout(()=>{
+        const next = heroPhotos[heroIndex];
+        heroRotatorImage.src = next.src;
+        heroRotatorImage.alt = next.alt;
+        heroRotatorImage.classList.remove("isFading");
+      }, 220);
+    }, 3500);
+  }
+
   // Small nicety: set copyright year
   const y = $("#year");
   if(y) y.textContent = String(new Date().getFullYear());
