@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Us | Southwood Civic Group</title>
+  <meta name="description" content="Learn about the Southwood Civic Group board of directors and HOA mission." />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container">
+      <div class="topbarInner">
+        <div class="brand">
+          <div class="brandMark" aria-hidden="true">
+            <img src="assets/logo.png" alt="">
+          </div>
+          <div class="brandText">
+            <div class="brandName">Southwood Civic Group</div>
+            <div class="brandTag">About our community leadership</div>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="events.html">Events</a>
+          <a data-nav href="news.html">News</a>
+          <a data-nav href="about.html">About Us</a>
+          <a data-nav href="deed-restrictions.html">Deed Restrictions</a>
+          <a data-nav href="contact.html">Contact</a>
+        </nav>
+
+        <button id="menuBtn" class="menuBtn" type="button" aria-controls="drawer" aria-expanded="false">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <div id="drawerBackdrop" class="drawerBackdrop" aria-hidden="true"></div>
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <div class="drawerHeader">
+      <div class="drawerTitle">Southwood</div>
+      <button id="closeBtn" class="closeBtn" type="button">Close</button>
+    </div>
+    <nav class="drawerNav" aria-label="Mobile navigation">
+      <a data-nav href="index.html">Home <small>Overview</small></a>
+      <a data-nav href="events.html">Events <small>Calendar</small></a>
+      <a data-nav href="news.html">News <small>Updates</small></a>
+      <a data-nav href="about.html">About Us <small>Board & HOA</small></a>
+      <a data-nav href="deed-restrictions.html">Deed Restrictions <small>Guidelines</small></a>
+      <a data-nav href="contact.html">Contact <small>Reach the board</small></a>
+    </nav>
+  </aside>
+
+  <main id="main" class="main">
+    <div class="container">
+      <section class="card" aria-label="About the HOA">
+        <div class="cardHeader">
+          <h2>About the HOA</h2>
+          <div class="sub">Who we are and what we do</div>
+        </div>
+        <div class="cardBody">
+          <p>
+            The Southwood Homeowners Association (HOA) exists to protect neighborhood standards,
+            support property values, and encourage positive relationships among neighbors.
+            We coordinate communications, host meetings, support neighborhood safety efforts,
+            and provide resources related to deed restrictions and community projects.
+          </p>
+          <p>
+            Our board works with residents to keep Southwood welcoming, informed, and well-maintained.
+            We encourage homeowners to attend meetings, share concerns, and volunteer in neighborhood programs.
+          </p>
+        </div>
+      </section>
+
+      <section class="card" aria-label="Board of Directors" style="margin-top:18px;">
+        <div class="cardHeader">
+          <h2>Board of Directors</h2>
+          <div class="sub">Displayed in descending order by leadership rank</div>
+        </div>
+        <div class="cardBody">
+          <div class="boardGrid" id="boardDirectors" data-sort-desc="rank">
+            <article class="boardCard" data-rank="6">
+              <img class="boardPhoto" src="assets/board-placeholder.svg" alt="Photo placeholder for Monica Diaz" />
+              <div class="boardName">Monica Diaz</div>
+              <div class="boardRole">President · Rank 6</div>
+            </article>
+            <article class="boardCard" data-rank="5">
+              <img class="boardPhoto" src="assets/board-placeholder.svg" alt="Photo placeholder for Kevin Hall" />
+              <div class="boardName">Kevin Hall</div>
+              <div class="boardRole">Vice President · Rank 5</div>
+            </article>
+            <article class="boardCard" data-rank="4">
+              <img class="boardPhoto" src="assets/board-placeholder.svg" alt="Photo placeholder for Danielle Nguyen" />
+              <div class="boardName">Danielle Nguyen</div>
+              <div class="boardRole">Secretary · Rank 4</div>
+            </article>
+            <article class="boardCard" data-rank="3">
+              <img class="boardPhoto" src="assets/board-placeholder.svg" alt="Photo placeholder for Harold Wright" />
+              <div class="boardName">Harold Wright</div>
+              <div class="boardRole">Treasurer · Rank 3</div>
+            </article>
+            <article class="boardCard" data-rank="2">
+              <img class="boardPhoto" src="assets/board-placeholder.svg" alt="Photo placeholder for Sonia Patel" />
+              <div class="boardName">Sonia Patel</div>
+              <div class="boardRole">Director At Large · Rank 2</div>
+            </article>
+            <article class="boardCard" data-rank="1">
+              <img class="boardPhoto" src="assets/board-placeholder.svg" alt="Photo placeholder for James Carter" />
+              <div class="boardName">James Carter</div>
+              <div class="boardRole">Director At Large · Rank 1</div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footerRow">
+        <div>© <span id="year"></span> Southwood Civic Group.</div>
+        <div><a href="index.html">Home</a> • <a href="about.html">About Us</a> • <a href="contact.html">Contact</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>
