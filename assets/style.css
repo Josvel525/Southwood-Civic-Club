@@ -1,17 +1,19 @@
-.logo {
-    float: right;
+.menuBtn {
+    display: inline-flex;
 }
 
-.hamburger-menu {
-    display: block;
+.heroTop {
+    grid-template-columns: .75fr 1.25fr;
 }
 
-.dropdown {
-    display: block;
+.brand {
+    display: flex;
+    order: 1;
 }
 
-.hero-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
+@media only screen and (max-width: 768px) {
+    .menuBtn {
+        display: inline-flex;
+    }
+    /* Adjust other responsive breakpoints as needed */
 }
