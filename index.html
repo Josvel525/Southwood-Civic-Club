@@ -1,212 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Southwood Civic Club | Community in Houston, TX</title>
-  <meta name="description" content="Southwood Civic Club — neighborhood updates, events, news, resources, and contact information." />
-  <link rel="icon" href="assets/logo.png" />
-  <link rel="stylesheet" href="assets/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southwood Civic Club</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Topbar -->
-  <header class="topbar">
-    <div class="container">
-      <div class="topbarInner">
-        <div class="brand">
-          <div class="brandMark" aria-hidden="true">
-            <img src="assets/logo.png" alt="">
-          </div>
-          <div class="brandText">
-            <div class="brandName">Southwood Civic Club</div>
-            <div class="brandTag">Community of neighbors • Houston, Texas</div>
-          </div>
-        </div>
-
-        <nav class="nav" aria-label="Primary navigation">
-          <a data-nav href="index.html">Home</a>
-          <a data-nav href="events.html">Events</a>
-          <a data-nav href="news.html">News</a>
-          <a data-nav href="about.html">About Us</a>
-          <a data-nav href="deed-restrictions.html">Deed Restrictions</a>
-          <a data-nav href="contact.html">Contact</a>
-        </nav>
-
-        <button id="menuBtn" class="menuBtn" type="button" aria-controls="drawer" aria-expanded="false">
-          Menu
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Drawer -->
-  <div id="drawerBackdrop" class="drawerBackdrop" aria-hidden="true"></div>
-
-  <aside id="drawer" class="drawer" aria-hidden="true">
-    <div class="drawerHeader">
-      <div class="drawerTitle">Southwood</div>
-      <button id="closeBtn" class="closeBtn" type="button">Close</button>
-    </div>
-    <nav class="drawerNav" aria-label="Mobile navigation">
-      <a data-nav href="index.html">Home <small>Overview</small></a>
-      <a data-nav href="events.html">Events <small>Calendar</small></a>
-      <a data-nav href="news.html">News <small>Updates</small></a>
-      <a data-nav href="about.html">About Us <small>Board & HOA</small></a>
-      <a data-nav href="deed-restrictions.html">Deed Restrictions <small>Guidelines</small></a>
-      <a data-nav href="contact.html">Contact <small>Reach the board</small></a>
-    </nav>
-  </aside>
-
-  <!-- Hero -->
-  <section id="heroPhotos" class="hero">
-    <div class="container">
-      <div class="heroCard">
-        <div class="heroTop">
-          <div class="heroImage">
-            <img id="heroRotatorImage" src="assets/hoa1.png" alt="Southwood Home of the Month" />
-            <div class="heroOverlay">
-              <div class="big">Southwood Civic Club</div>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Southwood Civic Club Logo">
             </div>
-          </div>
-
-          <div class="heroAside">
-            <h1>Welcome</h1>
-            <p>
-              This site is a simple hub for neighborhood information: upcoming events, recent updates,
-              photos, and key resources.
-            </p>
-
-            <div class="callouts">
-              <div class="callout">
-                <div class="label">Next event</div>
-                <div class="value">Community Meeting • 7:00 PM</div>
-                <div style="margin-top:4px;"><a href="events.html">View all events →</a></div>
-              </div>
-              <div class="callout">
-                <div class="label">Need a form / info?</div>
-                <div class="value">Deed Restrictions & Resources</div>
-                <div style="margin-top:4px;"><a href="deed-restrictions.html">Go to resources →</a></div>
-              </div>
+            <div class="hero-section">
+                <div class="rotation-images">
+                    <img src="image1.jpg" alt="Rotating Image 1">
+                    <img src="image2.jpg" alt="Rotating Image 2">
+                    <img src="image3.jpg" alt="Rotating Image 3">
+                </div>
             </div>
-
-            <div class="pillRow" style="margin-top:14px;">
-              <a class="btn primary" href="events.html">Upcoming Events</a>
-              <a class="btn" href="news.html">Latest News</a>
-              <a class="btn green" href="contact.html">Contact the Group</a>
-            </div>
-          </div>
         </div>
-
-        <div class="cardBody">
-       
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Main -->
-  <main id="main" class="main">
-    <div class="container">
-      <div class="grid">
-        <section class="card" aria-label="About">
-          <div class="cardHeader">
-            <h2>About Southwood</h2>
-            <div class="sub">A clean, classic layout that feels established.</div>
-          </div>
-          <div class="cardBody">
-            <p>
-              Southwood Civic Group is a neighborhood organization focused on community involvement, communication,
-              and preserving the quality and character of the area.
-            </p>
-
-            <hr class="sep" />
-
-            <h3 style="margin:0 0 8px; color:var(--accent);">Quick links</h3>
-            <ul class="list">
-              <li><a href="events.html">See upcoming events</a> (meetings, block walks, community days)</li>
-              <li><a href="news.html">Read neighborhood news</a> (announcements, updates)</li>
-              <li><a href="#heroPhotos">Community photos</a> (featured at the top of this page)</li>
-              <li><a href="deed-restrictions.html">Deed restrictions & resources</a> (guidelines and documents)</li>
-            </ul>
-          </div>
-        </section>
-
-        <aside class="card" aria-label="Highlights">
-          <div class="cardHeader">
-            <h2>Highlights</h2>
-            <div class="sub">At-a-glance</div>
-          </div>
-          <div class="cardBody">
-            <table class="table" aria-label="Highlights table">
-              <thead>
-                <tr><th>Item</th><th>Details</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><b>Meeting</b></td>
-                  <td>Monthly civic meeting (see Events page)</td>
-                </tr>
-                <tr>
-                  <td><b>News</b></td>
-                  <td>Short updates posted as needed</td>
-                </tr>
-                <tr>
-                  <td><b>Photos</b></td>
-                  <td>Community gallery + event snapshots</td>
-                </tr>
-                <tr>
-                  <td><b>Contact</b></td>
-                  <td>Use the Contact page form</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="pillRow" style="margin-top:12px;">
-              <a class="btn primary" href="deed-restrictions.html">Resources</a>
-            </div>
-          </div>
-        </aside>
-      </div>
-
-      <!-- Neighborhood Boundary Map -->
-      <section class="card boundaryMapCard" aria-label="Neighborhood Boundary Map" style="margin-top:18px;">
-        <div class="cardHeader">
-          <h2>Neighborhood Boundary</h2>
-          <div class="sub">Reference map image showing the HOA boundary lines.</div>
-        </div>
-
-        <div class="cardBody">
-          <img
-            src="assets/map.png"
-            alt="Southwood HOA boundary lines map"
-            style="width:100%; max-height:420px; object-fit:contain; border:1px solid var(--line); border-radius:14px; background:#fff;"
-          />
-
-          <div class="notice" style="margin-top:12px;">
-            <b>Note:</b> This static map image is provided as the HOA boundary reference.
-          </div>
-        </div>
-      </section>
-
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footerRow">
-        <div>© <span id="year"></span> Southwood Civic Group. All rights reserved.</div>
-        <div>
-          <a href="about.html">About Us</a> •
-          <a href="contact.html">Contact</a> •
-          <a href="deed-restrictions.html">Deed Restrictions</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="assets/site.js"></script>
+    </header>
+    <main>
+        <h1>Welcome to the Southwood Civic Club</h1>
+        <p>Your community hub for events and activities.</p>
+    </main>
+    <footer>
+        <p>© 2026 Southwood Civic Club. All rights reserved.</p>
+    </footer>
 </body>
 </html>
