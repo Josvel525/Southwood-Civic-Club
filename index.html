@@ -1,32 +1,254 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Southwood Civic Club</title>
-    <link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Southwood Civic Group | Community in Houston, TX</title>
+  <meta name="description" content="Southwood Civic Group — neighborhood updates, events, news, resources, and contact information." />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="assets/logo.png" alt="Southwood Civic Club Logo">
-            </div>
-            <div class="hero-section">
-                <div class="rotation-images">
-                    <img src="assets/hoa1.png" alt="Rotating Image 1">
-                    <img src="assets/hoa2.png" alt="Rotating Image 2">
-                    <img src="assets/hoa3.png" alt="Rotating Image 3">
-                </div>
-            </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container">
+      <div class="topbarInner">
+        <div class="brand">
+          <div class="brandMark" aria-hidden="true">
+            <img src="assets/logo.png" alt="">
+          </div>
+          <div class="brandText">
+            <div class="brandName">Southwood Civic Group</div>
+            <div class="brandTag">Community of neighbors • Houston, Texas</div>
+          </div>
         </div>
-    </header>
-    <main>
-        <h1>Welcome to the Southwood Civic Club</h1>
-        <p>Your community hub for events and activities.</p>
-    </main>
-    <footer>
-        <p>© 2026 Southwood Civic Club. All rights reserved.</p>
-    </footer>
+        <nav class="nav" aria-label="Primary navigation">
+          <a data-nav href="index.html">Home</a>
+          <a data-nav href="events.html">Events</a>
+          <a data-nav href="news.html">News</a>
+          <a data-nav href="photo-gallery.html">Photo Gallery</a>
+          <a data-nav href="deed-restrictions.html">Deed Restrictions</a>
+          <a data-nav href="contact.html">Contact</a>
+        </nav>
+        <button id="menuBtn" class="menuBtn" type="button" aria-controls="drawer" aria-expanded="false">
+          Menu
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- Drawer -->
+  <div id="drawerBackdrop" class="drawerBackdrop" aria-hidden="true"></div>
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <div class="drawerHeader">
+      <div class="drawerTitle">Southwood</div>
+      <button id="closeBtn" class="closeBtn" type="button">Close</button>
+    </div>
+    <nav class="drawerNav" aria-label="Mobile navigation">
+      <a data-nav href="index.html">Home <small>Overview</small></a>
+      <a data-nav href="events.html">Events <small>Calendar</small></a>
+      <a data-nav href="news.html">News <small>Updates</small></a>
+      <a data-nav href="photo-gallery.html">Photo Gallery <small>Community photos</small></a>
+      <a data-nav href="deed-restrictions.html">Deed Restrictions <small>Guidelines</small></a>
+      <a data-nav href="contact.html">Contact <small>Reach the board</small></a>
+    </nav>
+  </aside>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="heroCard">
+        <div class="heroTop">
+          <div class="heroImage">
+            <img src="assets/hero.jpg" alt="Neighborhood streetscape (replace with your photo)" />
+            <div class="heroOverlay">
+              <div class="kicker">Southwood Civic Group</div>
+              <div class="big">A classic neighborhood presence — clear info, no fluff.</div>
+            </div>
+          </div>
+          <div class="heroAside">
+            <h1>Welcome</h1>
+            <p>
+              This site is a simple hub for neighborhood information: upcoming events, recent updates,
+              photos, and key resources.
+            </p>
+            <div class="callouts">
+              <div class="callout">
+                <div class="label">Next event</div>
+                <div class="value">Community Meeting • 7:00 PM</div>
+                <div style="margin-top:4px;"><a href="events.html">View all events →</a></div>
+              </div>
+              <div class="callout">
+                <div class="label">Need a form / info?</div>
+                <div class="value">Deed Restrictions & Resources</div>
+                <div style="margin-top:4px;"><a href="deed-restrictions.html">Go to resources →</a></div>
+              </div>
+            </div>
+            <div class="pillRow" style="margin-top:14px;">
+              <a class="btn primary" href="events.html">Upcoming Events</a>
+              <a class="btn" href="news.html">Latest News</a>
+              <a class="btn green" href="contact.html">Contact the Group</a>
+            </div>
+          </div>
+        </div>
+        <div class="cardBody">
+          <div class="notice">
+            Tip: Replace the placeholder photos in <b>/assets</b> with real neighborhood images.
+            Keep file names the same for easiest setup.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Main -->
+  <main id="main" class="main">
+    <div class="container">
+      <div class="grid">
+        <section class="card" aria-label="About">
+          <div class="cardHeader">
+            <h2>About Southwood</h2>
+            <div class="sub">A clean, classic layout that feels established.</div>
+          </div>
+          <div class="cardBody">
+            <p>
+              Southwood Civic Group is a neighborhood organization focused on community involvement, communication,
+              and preserving the quality and character of the area.
+            </p>
+            <hr class="sep" />
+            <h3 style="margin:0 0 8px; color:var(--accent);">Quick links</h3>
+            <ul class="list">
+              <li><a href="events.html">See upcoming events</a> (meetings, block walks, community days)</li>
+              <li><a href="news.html">Read neighborhood news</a> (announcements, updates)</li>
+              <li><a href="photo-gallery.html">View photo gallery</a> (recent community moments)</li>
+              <li><a href="deed-restrictions.html">Deed restrictions & resources</a> (guidelines and documents)</li>
+            </ul>
+          </div>
+        </section>
+        <aside class="card" aria-label="Highlights">
+          <div class="cardHeader">
+            <h2>Highlights</h2>
+            <div class="sub">At-a-glance</div>
+          </div>
+          <div class="cardBody">
+            <table class="table" aria-label="Highlights table">
+              <thead>
+                <tr><th>Item</th><th>Details</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>Meeting</b></td>
+                  <td>Monthly civic meeting (see Events page)</td>
+                </tr>
+                <tr>
+                  <td><b>News</b></td>
+                  <td>Short updates posted as needed</td>
+                </tr>
+                <tr>
+                  <td><b>Photos</b></td>
+                  <td>Community gallery + event snapshots</td>
+                </tr>
+                <tr>
+                  <td><b>Contact</b></td>
+                  <td>Use the Contact page form</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="pillRow" style="margin-top:12px;">
+              <a class="btn" href="photo-gallery.html">Browse Photos</a>
+              <a class="btn primary" href="deed-restrictions.html">Resources</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <!-- Neighborhood Boundary Map -->
+      <section class="card" aria-label="Neighborhood Boundary Map" style="margin-top:18px;">
+        <div class="cardHeader">
+          <h2>Neighborhood Boundary</h2>
+          <div class="sub">Interactive map showing the area boundary (outline) and the reference address.</div>
+        </div>
+        <div class="cardBody">
+          <div id="map" style="height:420px; border:1px solid var(--line); border-radius:14px; overflow:hidden;"></div>
+          <div class="notice" style="margin-top:12px;">
+            <b>Note:</b> The outline is a polygon. Paste your client's boundary coordinates into
+            <code>BOUNDARY_COORDS</code> in the script below.
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footerRow">
+        <div>© <span id="year"></span> Southwood Civic Group. All rights reserved.</div>
+        <div>
+          <a href="contact.html">Contact</a> •
+          <a href="deed-restrictions.html">Deed Restrictions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/site.js"></script>
+  <script>
+    // Reference point (center/marker)
+    const REFERENCE_ADDRESS = "3314 Rosedale St, Houston, TX";
+    // Paste boundary coordinates here (lat/lng pairs).
+    // Example:
+    // const BOUNDARY_COORDS = [
+    //   { lat: 29.745123, lng: -95.390456 },
+    //   { lat: 29.744810, lng: -95.388900 },
+    //   { lat: 29.744120, lng: -95.389410 },
+    // ];
+    const BOUNDARY_COORDS = [
+      // TODO: paste HOA boundary coords here
+    ];
+    let map;
+    function initMap() {
+      const centerFallback = { lat: 29.744, lng: -95.386 }; // Houston-ish fallback
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: centerFallback,
+        zoom: 15,
+        mapTypeControl: true,
+        streetViewControl: false,
+        fullscreenControl: true,
+      });
+      // Geocode the reference address -> center + marker
+      const geocoder = new google.maps.Geocoder();
+      geocoder.geocode({ address: REFERENCE_ADDRESS }, (results, status) => {
+        if (status === "OK" && results && results[0]) {
+          const loc = results[0].geometry.location;
+          map.setCenter(loc);
+          new google.maps.Marker({
+            map,
+            position: loc,
+            title: REFERENCE_ADDRESS,
+          });
+        } else {
+          console.warn("Geocode failed:", status);
+        }
+      });
+      // Draw boundary polygon if coords are provided
+      if (Array.isArray(BOUNDARY_COORDS) && BOUNDARY_COORDS.length >= 3) {
+        const polygon = new google.maps.Polygon({
+          paths: BOUNDARY_COORDS,
+          strokeOpacity: 0.9,
+          strokeWeight: 3,
+          fillOpacity: 0.12,
+          clickable: false,
+        });
+        polygon.setMap(map);
+        // Fit map to polygon bounds
+        const bounds = new google.maps.LatLngBounds();
+        BOUNDARY_COORDS.forEach(p => bounds.extend(p));
+        map.fitBounds(bounds);
+      } else {
+        console.warn("No boundary coords found. Add at least 3 points to BOUNDARY_COORDS.");
+      }
+    }
+  </script>
+  <!-- IMPORTANT: replace YOUR_API_KEY with your Google Maps JavaScript API key -->
+  <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+  </script>
 </body>
 </html>
