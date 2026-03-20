@@ -1,4 +1,4 @@
-// Southwood Civic Group - site.js (vanilla JS, GitHub Pages friendly)
+// Southwood Civic Club - site.js (vanilla JS, GitHub Pages friendly)
 
 (function(){
   const $ = (sel, root=document) => root.querySelector(sel);
