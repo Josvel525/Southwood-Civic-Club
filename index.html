@@ -3,42 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Home | Southwood Civic Group</title>
-  <meta name="description" content="Welcome to the Southwood Civic Group — your community hub for events, news, and neighborhood resources." />
+  <title>Southwood Civic Club | Community in Houston, TX</title>
+  <meta name="description" content="Southwood Civic Club — neighborhood updates, events, news, resources, and contact information." />
   <link rel="icon" href="assets/logo.png" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
+  <!-- Topbar -->
   <header class="topbar">
     <div class="container">
       <div class="topbarInner">
         <div class="brand">
-          <div class="brandMark" aria-hidden="true">
-            <img src="assets/logo.png" alt="">
-          </div>
           <div class="brandText">
-            <div class="brandName">Southwood Civic Group</div>
-            <div class="brandTag">Your neighborhood community</div>
+            <div class="brandName">Southwood Civic Club</div>
+            <div class="brandTag">Community of neighbors • Houston, Texas</div>
           </div>
         </div>
-
         <nav class="nav" aria-label="Primary navigation">
           <a data-nav href="index.html">Home</a>
           <a data-nav href="events.html">Events</a>
           <a data-nav href="news.html">News</a>
-          <a data-nav href="about.html">About Us</a>
+          <a data-nav href="photo-gallery.html">Photo Gallery</a>
           <a data-nav href="deed-restrictions.html">Deed Restrictions</a>
           <a data-nav href="contact.html">Contact</a>
         </nav>
-
-        <button id="menuBtn" class="menuBtn" type="button" aria-controls="drawer" aria-expanded="false">Menu</button>
+        <button id="menuBtn" class="menuBtn" type="button" aria-controls="drawer" aria-expanded="false">
+          Menu
+        </button>
       </div>
     </div>
   </header>
-
+  <!-- Drawer -->
   <div id="drawerBackdrop" class="drawerBackdrop" aria-hidden="true"></div>
   <aside id="drawer" class="drawer" aria-hidden="true">
     <div class="drawerHeader">
@@ -49,105 +46,178 @@
       <a data-nav href="index.html">Home <small>Overview</small></a>
       <a data-nav href="events.html">Events <small>Calendar</small></a>
       <a data-nav href="news.html">News <small>Updates</small></a>
-      <a data-nav href="about.html">About Us <small>Board & Civic Club</small></a>
+      <a data-nav href="photo-gallery.html">Photo Gallery <small>Community photos</small></a>
       <a data-nav href="deed-restrictions.html">Deed Restrictions <small>Guidelines</small></a>
       <a data-nav href="contact.html">Contact <small>Reach the board</small></a>
     </nav>
   </aside>
-
-  <main id="main" class="main">
+  <!-- Hero -->
+  <section class="hero">
     <div class="container">
-
-      <section class="hero" aria-label="Welcome">
-        <div class="heroCard">
-          <div class="heroTop">
+      <div class="heroCard">
+        <div class="heroTop">
+          <div class="heroLeft">
+            <div class="heroLogoPanel">
+              <img src="assets/logo.png" alt="Southwood Civic Club logo" />
+            </div>
             <div class="heroImage">
               <img id="heroRotatorImage" src="assets/hoa1.png" alt="Southwood Home of the Month - Photo 1" />
               <div class="heroOverlay">
-                <div class="kicker">Home of the Month</div>
-                <div class="big">Southwood Neighborhood</div>
+                <div class="kicker">Southwood Civic Club</div>
+                <div class="big">A proud Houston neighborhood since 1955.</div>
               </div>
             </div>
-            <div class="heroAside">
-              <h1>Welcome to Southwood Civic Group</h1>
-              <p>Your community hub for events, neighborhood updates, and resources for Southwood residents.</p>
-              <div class="callouts">
-                <div class="callout">
-                  <div class="label">Next Meeting</div>
-                  <div class="value"><a href="events.html">March 26th, 2026 · 6:30 PM</a></div>
-                </div>
-                <div class="callout">
-                  <div class="label">Location</div>
-                  <div class="value">Judson Robinson Community Center</div>
-                </div>
-                <div class="callout">
-                  <div class="label">Membership Dues</div>
-                  <div class="value">$50 / year — <a href="contact.html">Join or renew</a></div>
-                </div>
+          </div>
+          <div class="heroAside">
+            <h1>Welcome</h1>
+            <p>
+              This site is a simple hub for neighborhood information: upcoming events, recent updates,
+              photos, and key resources.
+            </p>
+            <div class="callouts">
+              <div class="callout">
+                <div class="label">Next Meeting</div>
+                <div class="value"><a href="events.html">March 26th, 2026 · 6:30 PM</a></div>
               </div>
-              <div class="pillRow" style="margin-top:14px;">
-                <a class="btn primary" href="events.html">View events</a>
-                <a class="btn" href="news.html">Latest news</a>
-                <a class="btn" href="contact.html">Contact us</a>
+              <div class="callout">
+                <div class="label">Location</div>
+                <div class="value">Judson Robinson Community Center</div>
               </div>
+              <div class="callout">
+                <div class="label">Membership Dues</div>
+                <div class="value">$50 / year — <a href="contact.html">Join or renew</a></div>
+              </div>
+            </div>
+            <div class="pillRow" style="margin-top:14px;">
+              <a class="btn primary" href="events.html">Upcoming Events</a>
+              <a class="btn" href="news.html">Latest News</a>
+              <a class="btn green" href="contact.html">Contact the Group</a>
             </div>
           </div>
         </div>
-      </section>
-
-      <div class="grid" style="margin-top:16px;">
-        <section class="card">
+      </div>
+    </div>
+  </section>
+  <!-- Main -->
+  <main id="main" class="main">
+    <div class="container">
+      <div class="grid">
+        <section class="card" aria-label="About">
           <div class="cardHeader">
-            <h2>About Our Community</h2>
-            <div class="sub">Southwood Civic Group</div>
+            <h2>About Southwood</h2>
+            <div class="sub">A clean, classic layout that feels established.</div>
           </div>
           <div class="cardBody">
             <p>
-              The Southwood Civic Group (Civic Club) exists to protect neighborhood standards,
-              support property values, and encourage positive relationships among neighbors.
-              We coordinate communications, host meetings, support neighborhood safety efforts,
-              and provide resources related to deed restrictions and community projects.
+              Southwood Civic Club is a neighborhood organization focused on community involvement, communication,
+              and preserving the quality and character of the area.
             </p>
-            <p>
-              Our board works with residents to keep Southwood welcoming, informed, and well-maintained.
-              We encourage homeowners to attend meetings, share concerns, and volunteer in neighborhood programs.
-            </p>
-            <div class="pillRow">
-              <a class="btn primary" href="about.html">Meet the board</a>
-              <a class="btn" href="deed-restrictions.html">Deed restrictions</a>
-            </div>
-          </div>
-        </section>
-
-        <section class="card">
-          <div class="cardHeader">
-            <h2>Quick Links</h2>
-            <div class="sub">Helpful resources</div>
-          </div>
-          <div class="cardBody">
-            <ul class="list" style="padding:0; list-style:none; margin:0;">
-              <li style="margin:8px 0;"><a href="events.html">📅 Upcoming Events &amp; Meetings</a></li>
-              <li style="margin:8px 0;"><a href="news.html">📰 News &amp; Updates</a></li>
-              <li style="margin:8px 0;"><a href="about.html">👥 Board of Directors</a></li>
-              <li style="margin:8px 0;"><a href="deed-restrictions.html">📋 Deed Restrictions &amp; Bylaws</a></li>
-              <li style="margin:8px 0;"><a href="contact.html">✉️ Contact the Board</a></li>
+            <hr class="sep" />
+            <h3 style="margin:0 0 8px; color:var(--accent);">Quick links</h3>
+            <ul class="list">
+              <li><a href="events.html">See upcoming events</a> (meetings, block walks, community days)</li>
+              <li><a href="news.html">Read neighborhood news</a> (announcements, updates)</li>
+              <li><a href="photo-gallery.html">View photo gallery</a> (recent community moments)</li>
+              <li><a href="deed-restrictions.html">Deed restrictions & resources</a> (guidelines and documents)</li>
             </ul>
           </div>
         </section>
+        <aside class="card" aria-label="Highlights">
+          <div class="cardHeader">
+            <h2>Highlights</h2>
+            <div class="sub">At-a-glance</div>
+          </div>
+          <div class="cardBody">
+            <table class="table" aria-label="Highlights table">
+              <thead>
+                <tr><th>Item</th><th>Details</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>Meeting</b></td>
+                  <td>Monthly civic meeting (see Events page)</td>
+                </tr>
+                <tr>
+                  <td><b>News</b></td>
+                  <td>Short updates posted as needed</td>
+                </tr>
+                <tr>
+                  <td><b>Photos</b></td>
+                  <td>Community gallery + event snapshots</td>
+                </tr>
+                <tr>
+                  <td><b>Contact</b></td>
+                  <td>Use the Contact page form</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="pillRow" style="margin-top:12px;">
+              <a class="btn" href="photo-gallery.html">Browse Photos</a>
+              <a class="btn primary" href="deed-restrictions.html">Resources</a>
+            </div>
+          </div>
+        </aside>
       </div>
-
+      <!-- Neighborhood Boundary Map -->
+      <section class="card" aria-label="Neighborhood Boundary Map" style="margin-top:18px;">
+        <div class="cardHeader">
+          <h2>Neighborhood Boundary</h2>
+          <div class="sub">Interactive map showing the area boundary (outline) and the reference address.</div>
+        </div>
+        <div class="cardBody">
+          <div id="map" style="height:420px; border:1px solid var(--line); border-radius:14px; overflow:hidden;"></div>
+        </div>
+      </section>
     </div>
   </main>
-
   <footer class="footer">
     <div class="container">
       <div class="footerRow">
-        <div>© <span id="year"></span> Southwood Civic Group.</div>
-        <div><a href="events.html">Events</a> • <a href="about.html">About Us</a> • <a href="contact.html">Contact</a></div>
+        <div>© <span id="year"></span> Southwood Civic Club. All rights reserved.</div>
+        <div>
+          <a href="contact.html">Contact</a> •
+          <a href="deed-restrictions.html">Deed Restrictions</a>
+        </div>
       </div>
     </div>
   </footer>
-
   <script src="assets/site.js"></script>
+  <script>
+    const REFERENCE_ADDRESS = "3314 Rosedale St, Houston, TX";
+    const BOUNDARY_COORDS = [];
+    let map;
+    function initMap() {
+      const centerFallback = { lat: 29.744, lng: -95.386 };
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: centerFallback,
+        zoom: 15,
+        mapTypeControl: true,
+        streetViewControl: false,
+        fullscreenControl: true,
+      });
+      const geocoder = new google.maps.Geocoder();
+      geocoder.geocode({ address: REFERENCE_ADDRESS }, (results, status) => {
+        if (status === "OK" && results && results[0]) {
+          const loc = results[0].geometry.location;
+          map.setCenter(loc);
+          new google.maps.Marker({ map, position: loc, title: REFERENCE_ADDRESS });
+        }
+      });
+      if (Array.isArray(BOUNDARY_COORDS) && BOUNDARY_COORDS.length >= 3) {
+        const polygon = new google.maps.Polygon({
+          paths: BOUNDARY_COORDS,
+          strokeOpacity: 0.9,
+          strokeWeight: 3,
+          fillOpacity: 0.12,
+          clickable: false,
+        });
+        polygon.setMap(map);
+        const bounds = new google.maps.LatLngBounds();
+        BOUNDARY_COORDS.forEach(p => bounds.extend(p));
+        map.fitBounds(bounds);
+      }
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>
