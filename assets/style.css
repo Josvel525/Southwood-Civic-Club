@@ -276,7 +276,7 @@ body.drawerOpen .drawer{
   display:flex;
   flex-direction:row;
   align-items:stretch;
-  height:220px;
+  height:400px;
   border-right: 1px solid var(--line);
   overflow:hidden;
 }
@@ -300,7 +300,7 @@ body.drawerOpen .drawer{
 }
 .heroImage{
   flex:1;
-  height:220px;
+  height:400px;
   background: #f3f4f6;
   position:relative;
   overflow:hidden;
@@ -644,7 +644,7 @@ textarea{ min-height: 120px; resize: vertical; }
 @media (max-width: 920px){
   .heroTop{ grid-template-columns: 1fr; }
   .heroLeft{ border-right:0; border-bottom:1px solid var(--line); height:auto; }
-  .heroImage{ height:180px; }
+  .heroImage{ height:300px; }
   .grid{ grid-template-columns: 1fr; }
   .gallery{ grid-template-columns: repeat(2, 1fr); }
 }
@@ -652,7 +652,7 @@ textarea{ min-height: 120px; resize: vertical; }
   .heroLeft{ flex-direction:column; height:auto; }
   .heroLogoPanel{ width:100%; max-width:100%; border-right:0; border-bottom:1px solid var(--line); padding:12px; }
   .heroLogoPanel img{ width:120px; height:120px; }
-  .heroImage{ height:160px; }
+  .heroImage{ height:220px; }
 }
 
 @media (max-width: 760px){
