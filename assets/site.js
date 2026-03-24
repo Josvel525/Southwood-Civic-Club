@@ -141,6 +141,18 @@
     }, 3500);
   }
 
+  // Document panel accordions (deed-restrictions page)
+  $$('.docToggleBtn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panelId = btn.getAttribute('aria-controls');
+      const panel = document.getElementById(panelId);
+      if(!panel) return;
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isExpanded));
+      panel.hidden = isExpanded;
+    });
+  });
+
   // Small nicety: set copyright year
   const y = $("#year");
   if(y) y.textContent = String(new Date().getFullYear());
