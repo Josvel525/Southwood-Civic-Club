@@ -672,6 +672,33 @@ hr.sep{
 }
 textarea{ min-height: 130px; resize: vertical; line-height: 1.6; }
 
+/* Contact form status messages */
+.formStatus{
+  padding: 13px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  border: 1.5px solid transparent;
+  line-height: 1.5;
+}
+.formStatus.success{
+  background: rgba(47,111,78,.08);
+  border-color: rgba(47,111,78,.30);
+  color: #1e5c37;
+}
+.formStatus.error{
+  background: rgba(185,28,28,.06);
+  border-color: rgba(185,28,28,.25);
+  color: #991b1b;
+}
+.btn:disabled{
+  opacity: .60;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
 /* Footer */
 .footer{
   border-top:1px solid var(--line);

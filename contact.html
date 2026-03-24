@@ -7,6 +7,8 @@
   <meta name="description" content="Contact Southwood Civic Club." />
   <link rel="icon" href="assets/logo.png" />
   <link rel="stylesheet" href="assets/style.css" />
+  <!-- EmailJS – sends contact form submissions directly to the board's email inbox -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
 </head>
 
 <body>
@@ -65,15 +67,15 @@
           </div>
 
           <div class="cardBody">
-            <form action="https://formspree.io/f/REPLACE_ME" method="POST">
+            <form id="contactForm" novalidate>
               <div class="field">
                 <label for="name">Your name</label>
-                <input class="input" id="name" name="name" type="text" required />
+                <input class="input" id="name" name="name" type="text" required autocomplete="name" />
               </div>
 
               <div class="field">
                 <label for="email">Email</label>
-                <input class="input" id="email" name="email" type="email" required />
+                <input class="input" id="email" name="email" type="email" required autocomplete="email" />
               </div>
 
               <div class="field">
@@ -86,8 +88,10 @@
                 <textarea id="message" name="message" required></textarea>
               </div>
 
+              <div id="formStatus" class="formStatus" role="alert" aria-live="polite" hidden></div>
+
               <div class="pillRow">
-                <button class="btn primary" type="submit">Send message</button>
+                <button class="btn primary" id="sendBtn" type="submit">Send message</button>
                 <a class="btn" href="events.html">View events</a>
               </div>
             </form>
@@ -120,5 +124,108 @@
   </footer>
 
   <script src="assets/site.js"></script>
+
+  <script>
+  // ════════════════════════════════════════════════════════════════════
+  //  CONTACT FORM — EmailJS Configuration
+  //  ─────────────────────────────────────────────────────────────────
+  //  One-time setup (takes ~5 minutes):
+  //
+  //  1. Create a FREE account at https://www.emailjs.com
+  //     (Free tier: 200 emails/month — more than enough for a civic club)
+  //
+  //  2. In the EmailJS dashboard → Email Services → Add New Service
+  //     Connect your board's Gmail (or any email provider).
+  //     Copy the "Service ID" it gives you.
+  //
+  //  3. Email Templates → Create New Template
+  //     Suggested subject:  [Southwood Contact] {{topic}}
+  //     Suggested body:
+  //       Name:    {{from_name}}
+  //       Email:   {{from_email}}
+  //       Topic:   {{topic}}
+  //
+  //       {{message}}
+  //
+  //     Set "To Email" to info@southwood.org (your board inbox).
+  //     Copy the "Template ID".
+  //
+  //  4. Account → API Keys → copy your Public Key.
+  //
+  //  5. Replace the three placeholder strings below with your real values.
+  // ════════════════════════════════════════════════════════════════════
+
+  (function () {
+    var PUBLIC_KEY  = "YOUR_PUBLIC_KEY";   // e.g. "aBcDeFgHiJkLmNoPq"
+    var SERVICE_ID  = "YOUR_SERVICE_ID";   // e.g. "service_xxxxxxx"
+    var TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // e.g. "template_xxxxxxx"
+
+    var form    = document.getElementById("contactForm");
+    var status  = document.getElementById("formStatus");
+    var sendBtn = document.getElementById("sendBtn");
+
+    if (!form) return;
+
+    // If EmailJS has not been configured yet, fall back to a direct mailto link
+    // so the form is never completely broken during initial setup.
+    if (PUBLIC_KEY === "YOUR_PUBLIC_KEY") {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var name    = form.elements["name"].value.trim();
+        var email   = form.elements["email"].value.trim();
+        var topic   = form.elements["topic"].value.trim() || "General";
+        var message = form.elements["message"].value.trim();
+        var body    = "Name: " + name + "%0D%0AEmail: " + email + "%0D%0ATopic: " + topic + "%0D%0A%0D%0A" + encodeURIComponent(message);
+        window.location.href = "mailto:info@southwood.org?subject=" + encodeURIComponent("[Southwood] " + topic) + "&body=" + body;
+      });
+      return;
+    }
+
+    // Initialise EmailJS with the board's public key
+    emailjs.init({ publicKey: PUBLIC_KEY });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Basic HTML5 validation
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // Loading state
+      sendBtn.disabled = true;
+      sendBtn.textContent = "Sending…";
+      status.hidden = true;
+      status.className = "formStatus";
+
+      var params = {
+        from_name:  form.elements["name"].value.trim(),
+        from_email: form.elements["email"].value.trim(),
+        topic:      form.elements["topic"].value.trim() || "General",
+        message:    form.elements["message"].value.trim()
+      };
+
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, params)
+        .then(function () {
+          status.className = "formStatus success";
+          status.textContent = "Your message was sent successfully. The board will get back to you soon!";
+          status.hidden = false;
+          form.reset();
+        })
+        .catch(function (err) {
+          console.error("EmailJS error:", err);
+          status.className = "formStatus error";
+          status.textContent = "Something went wrong sending your message. Please try again, or email us directly at info@southwood.org.";
+          status.hidden = false;
+        })
+        .finally(function () {
+          sendBtn.disabled = false;
+          sendBtn.textContent = "Send message";
+          status.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        });
+    });
+  })();
+  </script>
 </body>
 </html>
