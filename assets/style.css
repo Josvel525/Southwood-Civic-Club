@@ -831,6 +831,132 @@ textarea{ min-height: 130px; resize: vertical; line-height: 1.6; }
   }
 }
 
+/* Document toggle accordion panels */
+.docToggleRow{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-bottom:24px;
+}
+
+.docToggleBtn{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  width:100%;
+  padding:18px 22px;
+  border-radius:14px;
+  border:1.5px solid var(--line);
+  background:var(--soft);
+  color:var(--ink);
+  font-family:Calibri, Candara, "Segoe UI", SegoeUI, Optima, Arial, sans-serif;
+  cursor:pointer;
+  text-align:left;
+  transition:background .15s ease, border-color .15s ease, box-shadow .15s ease;
+  box-shadow:0 1px 3px rgba(17,24,39,.07);
+}
+.docToggleBtn:hover{
+  background:#fff;
+  border-color:rgba(31,78,121,.35);
+  box-shadow:0 4px 12px rgba(17,24,39,.10);
+}
+.docToggleBtn[aria-expanded="true"]{
+  background:rgba(31,78,121,.06);
+  border-color:rgba(31,78,121,.30);
+}
+
+.docToggleIcon{
+  font-size:16px;
+  color:var(--accent);
+  flex-shrink:0;
+  transition:transform .2s ease;
+  line-height:1;
+}
+.docToggleBtn[aria-expanded="true"] .docToggleIcon{
+  transform:rotate(90deg);
+}
+
+.docToggleText{
+  flex:1;
+  min-width:0;
+}
+.docToggleLabel{
+  font-size:17px;
+  font-weight:800;
+  color:var(--accent);
+  display:block;
+}
+.docToggleSub{
+  font-size:13px;
+  color:var(--muted);
+  display:block;
+  margin-top:2px;
+}
+
+.docPanel{
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:28px 36px;
+  background:#fff;
+  margin-bottom:16px;
+  animation:panelOpen .18s ease;
+}
+
+@keyframes panelOpen{
+  from{ opacity:0; transform:translateY(-6px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+.docPanel h4{
+  margin:18px 0 6px;
+  color:var(--accent);
+}
+.docPanel h5{
+  margin:12px 0 4px;
+  color:var(--ink);
+}
+
+.docNotice{
+  border-left:4px solid rgba(31,78,121,.40);
+  background:rgba(31,78,121,.05);
+  border-radius:10px;
+  padding:14px 18px;
+  margin-bottom:20px;
+}
+.docNotice .noticeLabel{
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.6px;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:6px;
+}
+
+.docSection{
+  border-top:1px solid var(--line);
+  padding-top:20px;
+  margin-top:20px;
+}
+
+.docRecord{
+  display:inline-block;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.3px;
+  color:var(--muted);
+  background:var(--soft);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:3px 10px;
+  margin-bottom:14px;
+}
+
+@media (max-width:560px){
+  .docPanel{ padding:16px 14px; }
+  .docToggleBtn{ padding:14px 14px; gap:10px; }
+  .docToggleLabel{ font-size:15px; }
+}
+
 /* About page board cards */
 .boardGrid{
   display:grid;
