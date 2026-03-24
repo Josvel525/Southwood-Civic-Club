@@ -295,7 +295,7 @@ body.drawerOpen .drawer{
   justify-content:center;
   padding: 12px;
   border-right: 1px solid var(--line);
-  background: #fff;
+  background: linear-gradient(160deg, #162f4a 0%, #1f4e79 55%, #1a3d2b 100%);
   overflow:hidden;
 }
 .heroLogoPanel img{
@@ -378,6 +378,53 @@ body.drawerOpen .drawer{
 }
 .callout a{
   font-weight:800;
+}
+.membershipTiers{
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.tierRow{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tierBadge{
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 20px;
+  min-width: 58px;
+  text-align: center;
+}
+.tierRegular{
+  background: #e8edf2;
+  color: #3d5166;
+  border: 1px solid #c5d0db;
+}
+.tierSilver{
+  background: linear-gradient(135deg, #dde3ea 0%, #c8d0da 100%);
+  color: #3a4a5c;
+  border: 1px solid #adb8c7;
+}
+.tierGold{
+  background: linear-gradient(135deg, #fef0c7 0%, #f5d87e 100%);
+  color: #7a5200;
+  border: 1px solid #e6c04a;
+}
+.tierPrice{
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--ink);
+}
+.tierPer{
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--muted);
 }
 
 /* Content sections */
