@@ -7,6 +7,7 @@
   <meta name="description" content="Southwood Civic Club — neighborhood updates, events, news, resources, and contact information." />
   <link rel="icon" href="assets/logo.png" />
   <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
 <body>
@@ -16,6 +17,9 @@
     <div class="container">
       <div class="topbarInner">
         <div class="brand">
+          <div class="brandMark" aria-hidden="true">
+            <img src="assets/logo.png" alt="">
+          </div>
           <div class="brandText">
             <div class="brandName">Southwood Civic Club</div>
             <div class="brandTag">Community of neighbors • Houston, Texas</div>
@@ -198,42 +202,37 @@
     </div>
   </footer>
   <script src="assets/site.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    const REFERENCE_ADDRESS = "3314 Rosedale St, Houston, TX";
-    const BOUNDARY_COORDS = [];
-    let map;
-    function initMap() {
-      const centerFallback = { lat: 29.744, lng: -95.386 };
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: centerFallback,
-        zoom: 15,
-        mapTypeControl: true,
-        streetViewControl: false,
-        fullscreenControl: true,
-      });
-      const geocoder = new google.maps.Geocoder();
-      geocoder.geocode({ address: REFERENCE_ADDRESS }, (results, status) => {
-        if (status === "OK" && results && results[0]) {
-          const loc = results[0].geometry.location;
-          map.setCenter(loc);
-          new google.maps.Marker({ map, position: loc, title: REFERENCE_ADDRESS });
-        }
-      });
-      if (Array.isArray(BOUNDARY_COORDS) && BOUNDARY_COORDS.length >= 3) {
-        const polygon = new google.maps.Polygon({
-          paths: BOUNDARY_COORDS,
-          strokeOpacity: 0.9,
-          strokeWeight: 3,
-          fillOpacity: 0.12,
-          clickable: false,
-        });
-        polygon.setMap(map);
-        const bounds = new google.maps.LatLngBounds();
-        BOUNDARY_COORDS.forEach(p => bounds.extend(p));
-        map.fitBounds(bounds);
-      }
-    }
+    // Southwood Civic Club neighborhood boundary
+    // Border streets: Rosedale St (N), Tierwester St (E), Oakdale St (S), Sauer St (W)
+    const BOUNDARY_COORDS = [
+      [29.7308, -95.3878],  // NW: Rosedale St & Sauer St
+      [29.7308, -95.3728],  // NE: Rosedale St & Tierwester St
+      [29.7213, -95.3728],  // SE: Oakdale St & Tierwester St
+      [29.7213, -95.3878],  // SW: Oakdale St & Sauer St
+    ];
+
+    const center = [29.7260, -95.3803];
+    const map = L.map('map').setView(center, 15);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19,
+    }).addTo(map);
+
+    const polygon = L.polygon(BOUNDARY_COORDS, {
+      color: '#1a5c38',
+      weight: 3,
+      opacity: 0.9,
+      fillColor: '#1a5c38',
+      fillOpacity: 0.10,
+    }).addTo(map);
+
+    map.fitBounds(polygon.getBounds(), { padding: [30, 30] });
+
+    const marker = L.marker(center).addTo(map);
+    marker.bindPopup('<strong>Southwood Civic Club</strong><br>Houston, TX').openPopup();
   </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>
