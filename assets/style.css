@@ -8,9 +8,9 @@
   --line:#e5e7eb;
   --soft:#f7f7f8;
 
-  --accent:#1f4e79;     /* civic navy */
-  --accent2:#8b5e34;    /* warm bronze */
-  --accent3:#2f6f4e;    /* deep green */
+  --accent:#1a5c38;     /* logo forest green */
+  --accent2:#8b5e34;    /* warm bronze/gold */
+  --accent3:#2a8a56;    /* lighter green */
 
   --shadow: 0 10px 30px rgba(17,24,39,.08);
   --shadow2: 0 6px 16px rgba(17,24,39,.10);
@@ -71,8 +71,8 @@ img{ max-width:100%; height:auto; display:block; }
 
 /* Header */
 .topbar{
-  border-bottom:1px solid var(--line);
-  background:#fff;
+  border-bottom:1px solid #154d30;
+  background:#1a5c38;
   position:sticky;
   top:0;
   z-index:50;
@@ -96,12 +96,13 @@ img{ max-width:100%; height:auto; display:block; }
   width:84px;
   height:84px;
   border-radius:10px;
-  border:1px solid var(--line);
-  background: linear-gradient(135deg, rgba(31,78,121,.10), rgba(47,111,78,.08));
+  border:1px solid rgba(255,255,255,.30);
+  background:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
   overflow:hidden;
+  flex-shrink:0;
 }
 .brandMark img{
   width:100%;
@@ -116,10 +117,11 @@ img{ max-width:100%; height:auto; display:block; }
 .brandName{
   font-weight:700;
   letter-spacing:.2px;
+  color:#fff;
 }
 .brandTag{
   font-size:13px;
-  color:var(--muted);
+  color:rgba(255,255,255,.78);
 }
 
 /* Desktop nav */
@@ -133,19 +135,20 @@ img{ max-width:100%; height:auto; display:block; }
 .nav a{
   padding:8px 10px;
   border-radius:10px;
-  color:var(--ink);
+  color:rgba(255,255,255,.90);
   text-decoration:none;
   border:1px solid transparent;
 }
 .nav a:hover{
-  background: var(--soft);
-  border-color: var(--line);
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.22);
   text-decoration:none;
+  color:#fff;
 }
 .nav a.active{
-  background: rgba(31,78,121,.08);
-  border-color: rgba(31,78,121,.18);
-  color: var(--accent);
+  background: rgba(255,255,255,.18);
+  border-color: rgba(255,255,255,.32);
+  color: #fff;
   font-weight:700;
 }
 
@@ -156,9 +159,9 @@ img{ max-width:100%; height:auto; display:block; }
   min-width:88px;
   padding:0 16px;
   border-radius:10px;
-  border:1.5px solid var(--line);
-  background:var(--paper);
-  color:var(--ink);
+  border:1.5px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.12);
+  color:#fff;
   font-weight:700;
   font-family: Calibri, Candara, "Segoe UI", SegoeUI, Optima, Arial, sans-serif;
   font-size:14px;
@@ -169,18 +172,31 @@ img{ max-width:100%; height:auto; display:block; }
   cursor:pointer;
   user-select:none;
   transition: background .14s ease, border-color .14s ease, box-shadow .14s ease;
-  box-shadow: 0 1px 3px rgba(17,24,39,.07);
+  box-shadow: 0 1px 3px rgba(0,0,0,.12);
 }
 .menuBtn:hover,
 .closeBtn:hover{
-  background:var(--soft);
-  border-color: #c5cdd5;
-  box-shadow: 0 3px 8px rgba(17,24,39,.10);
+  background:rgba(255,255,255,.22);
+  border-color: rgba(255,255,255,.55);
+  box-shadow: 0 3px 8px rgba(0,0,0,.15);
 }
 .menuBtn:active,
 .closeBtn:active{ transform: translateY(1px); box-shadow: none; }
 
 .menuBtn{ display:none; }
+
+/* Close button lives inside the white drawer — override to dark ink */
+.closeBtn{
+  border-color: var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 1px 3px rgba(17,24,39,.07);
+}
+.closeBtn:hover{
+  background: var(--soft);
+  border-color: #c5cdd5;
+  box-shadow: 0 3px 8px rgba(17,24,39,.10);
+}
 
 /* Drawer */
 .drawerBackdrop{
@@ -243,8 +259,8 @@ img{ max-width:100%; height:auto; display:block; }
   border-color: var(--line);
 }
 .drawerNav a.active{
-  background: rgba(31,78,121,.08);
-  border-color: rgba(31,78,121,.18);
+  background: rgba(26,92,56,.10);
+  border-color: rgba(26,92,56,.22);
   color: var(--accent);
   font-weight:800;
 }
@@ -294,8 +310,8 @@ body.drawerOpen .drawer{
   align-items:center;
   justify-content:center;
   padding: 12px;
-  border-right: 1px solid var(--line);
-  background: linear-gradient(160deg, #162f4a 0%, #1f4e79 55%, #1a3d2b 100%);
+  border-right: 1px solid #d6e8dc;
+  background: linear-gradient(160deg, #e8f4ed 0%, #f4faf6 50%, #edf6f0 100%);
   overflow:hidden;
 }
 .heroLogoPanel img{
@@ -512,20 +528,20 @@ hr.sep{
   box-shadow: 0 1px 3px rgba(17,24,39,.08);
 }
 .btn.primary{
-  background: linear-gradient(160deg, #2563a8 0%, #1f4e79 100%);
-  border-color: #1a4370;
+  background: linear-gradient(160deg, #22784a 0%, #1a5c38 100%);
+  border-color: #154d30;
   color: #fff;
-  box-shadow: 0 2px 8px rgba(31,78,121,.35), inset 0 1px 0 rgba(255,255,255,.18);
+  box-shadow: 0 2px 8px rgba(26,92,56,.35), inset 0 1px 0 rgba(255,255,255,.18);
 }
 .btn.primary:hover{
-  background: linear-gradient(160deg, #2d6fc0 0%, #23598a 100%);
-  border-color: #1a4370;
-  box-shadow: 0 6px 18px rgba(31,78,121,.40), inset 0 1px 0 rgba(255,255,255,.18);
+  background: linear-gradient(160deg, #29925b 0%, #22784a 100%);
+  border-color: #154d30;
+  box-shadow: 0 6px 18px rgba(26,92,56,.40), inset 0 1px 0 rgba(255,255,255,.18);
   color: #fff;
 }
 .btn.primary:active{
-  background: linear-gradient(160deg, #1f4e79 0%, #1a4370 100%);
-  box-shadow: 0 1px 4px rgba(31,78,121,.30);
+  background: linear-gradient(160deg, #1a5c38 0%, #154d30 100%);
+  box-shadow: 0 1px 4px rgba(26,92,56,.30);
 }
 .btn.green{
   background: linear-gradient(160deg, #37865d 0%, #2f6f4e 100%);
@@ -551,8 +567,8 @@ hr.sep{
 .list li{ margin: 6px 0; }
 
 .notice{
-  border-left: 4px solid rgba(31,78,121,.50);
-  background: rgba(31,78,121,.06);
+  border-left: 4px solid rgba(26,92,56,.50);
+  background: rgba(26,92,56,.06);
   padding: 10px 12px;
   border-radius: 10px;
   color: var(--muted);
@@ -713,9 +729,9 @@ hr.sep{
   background: #fff;
 }
 .input:focus, textarea:focus{
-  border-color: #2563a8;
+  border-color: #1a5c38;
   background: #fff;
-  box-shadow: 0 0 0 3.5px rgba(37,99,168,.14), inset 0 1px 2px rgba(17,24,39,.04);
+  box-shadow: 0 0 0 3.5px rgba(26,92,56,.14), inset 0 1px 2px rgba(17,24,39,.04);
 }
 textarea{ min-height: 130px; resize: vertical; line-height: 1.6; }
 
@@ -857,12 +873,12 @@ textarea{ min-height: 130px; resize: vertical; line-height: 1.6; }
 }
 .docToggleBtn:hover{
   background:#fff;
-  border-color:rgba(31,78,121,.35);
+  border-color:rgba(26,92,56,.35);
   box-shadow:0 4px 12px rgba(17,24,39,.10);
 }
 .docToggleBtn[aria-expanded="true"]{
-  background:rgba(31,78,121,.06);
-  border-color:rgba(31,78,121,.30);
+  background:rgba(26,92,56,.06);
+  border-color:rgba(26,92,56,.30);
 }
 
 .docToggleIcon{
@@ -917,8 +933,8 @@ textarea{ min-height: 130px; resize: vertical; line-height: 1.6; }
 }
 
 .docNotice{
-  border-left:4px solid rgba(31,78,121,.40);
-  background:rgba(31,78,121,.05);
+  border-left:4px solid rgba(26,92,56,.40);
+  background:rgba(26,92,56,.05);
   border-radius:10px;
   padding:14px 18px;
   margin-bottom:20px;
