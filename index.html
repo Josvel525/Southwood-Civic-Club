@@ -7,11 +7,11 @@
   <meta name="description" content="Southwood Civic Club — neighborhood updates, events, news, resources, and contact information." />
   <link rel="icon" href="assets/logo.png" />
   <link rel="stylesheet" href="assets/style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- Topbar -->
   <header class="topbar">
     <div class="container">
@@ -30,7 +30,7 @@
           <a data-nav href="events.html">Events</a>
           <a data-nav href="news.html">News</a>
           <a data-nav href="deed-restrictions.html">Deed Restrictions</a>
-           <a data-nav href="about.html">About Us</a>
+          <a data-nav href="about.html">About Us</a>
           <a data-nav href="contact.html">Contact</a>
         </nav>
         <button id="menuBtn" class="menuBtn" type="button" aria-controls="drawer" aria-expanded="false">
@@ -39,6 +39,7 @@
       </div>
     </div>
   </header>
+
   <!-- Drawer -->
   <div id="drawerBackdrop" class="drawerBackdrop" aria-hidden="true"></div>
   <aside id="drawer" class="drawer" aria-hidden="true">
@@ -55,6 +56,7 @@
       <a data-nav href="contact.html">Contact <small>Reach the board</small></a>
     </nav>
   </aside>
+
   <!-- Hero -->
   <section class="hero">
     <div class="container">
@@ -116,6 +118,7 @@
       </div>
     </div>
   </section>
+
   <!-- Main -->
   <main id="main" class="main">
     <div class="container">
@@ -140,6 +143,7 @@
             </ul>
           </div>
         </section>
+
         <aside class="card" aria-label="Highlights">
           <div class="cardHeader">
             <h2>Highlights</h2>
@@ -147,29 +151,29 @@
           </div>
           <div class="cardBody">
             <div class="tableScroll">
-            <table class="table" aria-label="Highlights table">
-              <thead>
-                <tr><th>Item</th><th>Details</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-label="Item"><b>Meeting</b></td>
-                  <td data-label="Details">Monthly civic meeting (see Events page)</td>
-                </tr>
-                <tr>
-                  <td data-label="Item"><b>News</b></td>
-                  <td data-label="Details">Short updates posted as needed</td>
-                </tr>
-                <tr>
-                  <td data-label="Item"><b>Photos</b></td>
-                  <td data-label="Details">Community gallery + event snapshots</td>
-                </tr>
-                <tr>
-                  <td data-label="Item"><b>Contact</b></td>
-                  <td data-label="Details">Use the Contact page form</td>
-                </tr>
-              </tbody>
-            </table>
+              <table class="table" aria-label="Highlights table">
+                <thead>
+                  <tr><th>Item</th><th>Details</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Item"><b>Meeting</b></td>
+                    <td data-label="Details">Monthly civic meeting (see Events page)</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Item"><b>News</b></td>
+                    <td data-label="Details">Short updates posted as needed</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Item"><b>Photos</b></td>
+                    <td data-label="Details">Community gallery + event snapshots</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Item"><b>Contact</b></td>
+                    <td data-label="Details">Use the Contact page form</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div class="pillRow" style="margin-top:12px;">
               <a class="btn" href="photo-gallery.html">Browse Photos</a>
@@ -178,18 +182,24 @@
           </div>
         </aside>
       </div>
+
       <!-- Neighborhood Boundary Map -->
       <section class="card" aria-label="Neighborhood Boundary Map" style="margin-top:18px;">
         <div class="cardHeader">
           <h2>Neighborhood Boundary</h2>
-          <div class="sub">Interactive map showing the area boundary (outline) and the reference address.</div>
+          <div class="sub">Reference image showing the Southwood Civic Club boundary.</div>
         </div>
         <div class="cardBody">
-          <div id="map" style="height:420px; border:1px solid var(--line); border-radius:14px; overflow:hidden;"></div>
+          <img
+            src="assets/map.png"
+            alt="Map showing the Southwood Civic Club neighborhood boundary"
+            style="display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:14px;"
+          />
         </div>
       </section>
     </div>
   </main>
+
   <footer class="footer">
     <div class="container">
       <div class="footerRow">
@@ -201,38 +211,7 @@
       </div>
     </div>
   </footer>
+
   <script src="assets/site.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script>
-    // Southwood Civic Club neighborhood boundary
-    // Border streets: Rosedale St (N), Tierwester St (E), Oakdale St (S), Sauer St (W)
-    const BOUNDARY_COORDS = [
-      [29.71771, -95.36484],  // NW: Rosedale St & Sauer St
-      [29.71617, -95.35974],  // NE: Rosedale St & Tierwester St
-      [29.71315, -95.36100],  // SE: Oakdale St & Tierwester St
-      [29.71471, -95.36606],  // SW: Oakdale St & Sauer St
-    ];
-
-    const center = [29.7260, -95.3803];
-    const map = L.map('map').setView(center, 15);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      maxZoom: 19,
-    }).addTo(map);
-
-    const polygon = L.polygon(BOUNDARY_COORDS, {
-      color: '#1a5c38',
-      weight: 3,
-      opacity: 0.9,
-      fillColor: '#1a5c38',
-      fillOpacity: 0.10,
-    }).addTo(map);
-
-    map.fitBounds(polygon.getBounds(), { padding: [30, 30] });
-
-    const marker = L.marker(center).addTo(map);
-    marker.bindPopup('<strong>Southwood Civic Club</strong><br>Houston, TX').openPopup();
-  </script>
 </body>
 </html>
