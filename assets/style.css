@@ -619,28 +619,36 @@ hr.sep{
 .tableScroll{
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  border-radius: 12px;
-  border: 1px solid var(--line);
 }
 .table{
   width:100%;
   border-collapse:collapse;
-  border-radius: 12px;
-  overflow:hidden;
 }
 .table th, .table td{
-  padding: 13px 16px;
+  padding: 13px 18px;
   border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
   vertical-align: middle;
+  text-align: left;
+}
+.table th:last-child,
+.table td:last-child{
+  border-right: 0;
 }
 .table th{
   background: var(--soft);
-  text-align:left;
-  color: var(--ink);
-  font-weight:800;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  white-space: nowrap;
 }
-.table tr:hover td{
-  background: rgba(17,24,39,.02);
+.table tbody tr:hover td{
+  background: rgba(26,92,56,.03);
+}
+.table tbody tr:last-child td{
+  border-bottom: 0;
 }
 
 /* Gallery */
