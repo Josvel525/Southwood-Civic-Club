@@ -629,9 +629,9 @@ hr.sep{
   overflow:hidden;
 }
 .table th, .table td{
-  padding: 10px 10px;
+  padding: 13px 16px;
   border-bottom: 1px solid var(--line);
-  vertical-align:top;
+  vertical-align: middle;
 }
 .table th{
   background: var(--soft);
