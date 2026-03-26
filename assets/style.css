@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;600;700&display=swap');
+
 /* Southwood Civic Club - Classic site styling */
 
 :root{
@@ -31,13 +33,17 @@ body{
   margin:0;
   background:var(--paper);
   color:var(--ink);
-  font-family: Calibri, Candara, "Segoe UI", SegoeUI, Optima, Arial, sans-serif;
+  font-family: 'Lato', Calibri, "Segoe UI", Arial, sans-serif;
   font-size:15px;
   line-height:1.55;
 }
 
 a{ color:var(--accent); text-decoration:none; }
 a:hover{ text-decoration:underline; }
+
+h1, h2, h3{
+  font-family: 'Playfair Display', Georgia, serif;
+}
 
 img{ max-width:100%; height:auto; display:block; }
 
@@ -122,8 +128,10 @@ img{ max-width:100%; height:auto; display:block; }
   line-height:1.1;
 }
 .brandName{
+  font-family: 'Playfair Display', Georgia, serif;
   font-weight:700;
-  letter-spacing:.2px;
+  font-size: 20px;
+  letter-spacing:.3px;
   color:#fff;
 }
 .brandTag{
@@ -170,7 +178,7 @@ img{ max-width:100%; height:auto; display:block; }
   background:rgba(255,255,255,.12);
   color:#fff;
   font-weight:700;
-  font-family: Calibri, Candara, "Segoe UI", SegoeUI, Optima, Arial, sans-serif;
+  font-family: 'Lato', Calibri, "Segoe UI", Arial, sans-serif;
   font-size:14px;
   line-height:1;
   display:inline-flex;
@@ -533,7 +541,7 @@ hr.sep{
   cursor:pointer;
   text-decoration:none;
   transition: transform .15s ease, background .15s ease, box-shadow .15s ease, border-color .15s ease;
-  font-family: Calibri, Candara, "Segoe UI", SegoeUI, Optima, Arial, sans-serif;
+  font-family: 'Lato', Calibri, "Segoe UI", Arial, sans-serif;
   box-shadow: 0 1px 3px rgba(17,24,39,.08), inset 0 1px 0 rgba(255,255,255,.9);
   position: relative;
   overflow: hidden;
@@ -738,7 +746,7 @@ hr.sep{
   border: 1.5px solid var(--line);
   border-radius: 12px;
   padding: 11px 14px;
-  font-family: Calibri, Candara, "Segoe UI", SegoeUI, Optima, Arial, sans-serif;
+  font-family: 'Lato', Calibri, "Segoe UI", Arial, sans-serif;
   font-size: 15px;
   outline: none;
   background: #fafafa;
@@ -892,7 +900,7 @@ textarea{ min-height: 130px; resize: vertical; line-height: 1.6; }
   border:1.5px solid var(--line);
   background:var(--soft);
   color:var(--ink);
-  font-family:Calibri, Candara, "Segoe UI", SegoeUI, Optima, Arial, sans-serif;
+  font-family: 'Lato', Calibri, "Segoe UI", Arial, sans-serif;
   cursor:pointer;
   text-align:left;
   transition:background .15s ease, border-color .15s ease, box-shadow .15s ease;
