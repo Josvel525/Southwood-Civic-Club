@@ -812,6 +812,7 @@ textarea{ min-height: 130px; resize: vertical; line-height: 1.6; }
   .heroImage{ height:300px; }
   .grid{ grid-template-columns: 1fr; }
   .gallery{ grid-template-columns: repeat(2, 1fr); }
+  .boundaryLayout{ grid-template-columns: 1fr !important; }
 }
 @media (max-width: 560px){
   .heroLeft{ flex-direction:column; height:auto; }
